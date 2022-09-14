@@ -42,12 +42,11 @@ button{
     font-weight: 700;
     font-size: 14px;
     cursor: pointer; 
-    transition: all 0.3s linear;  
     text-transform: uppercase;
 }
 
 button:hover{
-
+    color:  rgb(98, 158, 248);
 }
 
 .section-title{
@@ -104,6 +103,49 @@ button:hover{
     gap: 50px; 
  }
 
+.navbar i{
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+
+#toggle-menu {
+    display: none
+}
+
+@media(max-width: 992px) {
+        #toggle-menu:checked + .navbar-list {
+        display: flex;
+    }
+
+    .header{
+
+    }
+
+    .navbar i{
+        display:block
+
+    }
+
+    .navbar-list{
+        position: absolute;
+        flex-direction: column;
+        top: 100px;
+        right: 0;
+        width: 100%;
+        display: none;
+        height: calc(100vh - 100px);
+        background-color: var(--lightblue);
+        font-size: 20px;
+
+    }
+
+    .navbar a:hover {
+        color: black;
+
+    }
+}
 #hero {
     justify-content: space-between;
     flex-wrap: wrap;
@@ -157,6 +199,7 @@ button:hover{
         align-items: center;
         text-align: center;
     }
+
 }
 
 #about-us{
@@ -212,18 +255,6 @@ button:hover{
     height: 160px;
     position: relative;
     padding-top: 50px;
-    background-color: #999;
-}
-
-
-.product-card-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    background-size: cover;
 }
 
 
@@ -232,27 +263,26 @@ button:hover{
     font-size: 20px;
 }
 
-/* .products-cards:first-child .product-card-img {
+#argentina {
     background-image: url(./img/paquete1.jpg);
 }
 
-.products-cards:nth-child(2) .product-card-img {
+#brasil {
     background-image: url(./img/paquete2.jpg);
 
 }
-.products-cards:nth-child(3) .product-card-img {
-    background-image: url(./img/All-Inclusive.jpg);
-    
+
+#all-inclusive {
+    background-image: url(./img/paquete3.jpg);
 }
-.products-cards:nth-child(4) .product-card-img {
+
+#europa {
     background-image: url(./img/paquete4.jpg);
-    
 }
-.products-cards:nth-child(5) .product-card-img {
+
+#disney {
     background-image: url(./img/paquete5.jpg);
-    
 }
- */
 
 
 
@@ -330,12 +360,57 @@ input[type="password"] {
     text-align: center;
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
     .form {
         margin: auto;
         margin: 500px;
         margin-top: 150px;
         border-radius: 2%;
     }
-} */
+}
 
+/* footer */
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1300px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 70px; 
+    padding: 30px;
+}
+
+.footer-msg {
+    text-align: justify;
+    font-weight: 500;
+    font-size: 14px;
+    max-width: 450px;
+}
+
+.footer.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 10px;
+    min-height: 100px;
+}
+
+.footer-copyright {
+    display: flex;
+    gap: 25px;
+    font-size: 14px;
+
+}
+
+@media (max-width: 945px) {
+    .footer {
+        gap: 40px;
+    }
+
+    .footer.msg {
+        max-width: 600px;
+        text-align: center;
+    }
+}
